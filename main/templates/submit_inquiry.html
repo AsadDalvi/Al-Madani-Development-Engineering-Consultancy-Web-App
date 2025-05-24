@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="inquiry-container">
+    <h2>Submit Your Questions</h2>
+    <form method="post">
+        {% csrf_token %}
+        
+        <!-- Subject Input -->
+        <input type="text" name="subject" placeholder="Subject" required>
+
+        <!-- Message Input -->
+        <textarea name="message" placeholder="Your Message" required></textarea>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn inquiry-btn">Submit</button>
+    </form>
+
+    <br>
+    <a href="{% url 'client_dashboard' %}" class="dashboard-link">Back to Dashboard</a>
+</div>
+{% endblock %}

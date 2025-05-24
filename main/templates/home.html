@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<!-- Hero Section -->
+<div class="hero-section text-center">
+    <div class="hero-title-box">
+        <p>Welcome to Al Madani Development Engineering Consultancy</p>
+    </div>
+    <div class="hero-description">
+        <h2>Innovative Solutions, Lasting Excellence</h2>
+        <p>At Al Madani Development Engineering Consultancy, we specialize in delivering architectural planning, structural design, 3D modeling, interior design, and site supervision with a commitment to quality and precision. Our expertise ensures that every project meets industry standards while aligning with client visions.</p>
+        
+        <ul class="hero-benefits">
+            <li>✔ Modern, Sustainable Designs</li>
+            <li>✔ Tailored Engineering & Architectural Solutions</li>
+            <li>✔ Uncompromising Commitment to Quality</li>
+        </ul>
+        <p><strong>Shaping the Future of Engineering & Architecture</strong></p>
+    </div>
+    <br>
+    <a href="{% url 'services' %}" class="view-servicess-btn">View Our Services</a>
+</div>
+
+
+<!-- Gallery Section -->
+<div class="container mt-5 text-center">
+    <h3 calss="mt-5">Our Recent Projects</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{% static 'images/111.jpg' %}" alt="Additional Project 1" class="img-fluid rounded">
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'images/222.jpg' %}" alt="Additional Project 2" class="img-fluid rounded">
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'images/333.jpg' %}" alt="Additional Project 3" class="img-fluid rounded">
+        </div>
+    </div>
+    <br>
+    <a href="{% url 'gallery' %}" class="view-servicesss-btn">Check Our Project Gallery</a>
+</div>
+
+{% endblock %}

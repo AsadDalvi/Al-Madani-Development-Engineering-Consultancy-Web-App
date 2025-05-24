@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="dashboard-container">
+    <h2>Employee Dashboard</h2>
+
+    <div class="dashboard-buttons">
+        <a href="{% url 'feedback_report' %}" class="btn">View Feedback</a>
+        <a href="{% url 'inquiry_report' %}" class="btn">View Inquiries</a>
+        <a href="{% url 'floor_plan_list' %}" class="btn">Manage Floor Plans</a>
+        <a href="{% url 'logout' %}" class="btn logout-btn">Logout</a>
+    </div>
+
+</div>
+{% endblock %}

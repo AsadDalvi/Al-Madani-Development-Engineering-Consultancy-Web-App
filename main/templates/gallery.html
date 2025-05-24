@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Gallery{% endblock %}
+{% block content %}
+
+<h2 class="text-center">Project Gallery</h2>
+
+<div class="container text-center">
+    <div class="row">
+        {% for image in images %}
+        <div class="col-md-4">
+            <img src="{{ image.image.url }}" alt="Gallery Image" class="img-fluid rounded">
+        </div>
+        {% empty %}
+        <p>No images available.</p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

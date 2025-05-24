@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Services{% endblock %}
+
+{% block content %}
+<div class="services-container">
+    <h2 class="services-title">Our Services</h2>
+    <p class="services-description">
+        Al Madani Development Engineering Consultancy specializes in a wide array of engineering and architectural services designed
+        to meet the unique needs of each client. We are committed to delivering innovative, durable, and functional design solutions,
+        ensuring every project aligns with our clients' vision and requirements. Our services include:
+    </p>
+
+    <div class="services-list">
+        <div class="service-item">
+            <h3 class="service-title"><strong>Architectural Planning</strong></h3>
+            <p class="service-description">
+                We create detailed floor layouts, including MEP (Mechanical, Electrical, Plumbing) designs, while ensuring compliance with local regulations.
+            </p>
+        </div>
+        
+        <div class="service-item">
+            <h3 class="service-title"><strong>Structural Design</strong></h3>
+            <p class="service-description">
+                Our expert team ensures durable and safe structural designs that blend functionality and aesthetics.
+            </p>
+        </div>
+        
+        <div class="service-item">
+            <h3 class="service-title"><strong>Interior Design</strong></h3>
+            <p class="service-description">
+                We design functional and aesthetically pleasing interiors that complement the overall vision of your space.
+            </p>
+        </div>
+
+        <div class="service-item">
+            <h3 class="service-title"><strong>3D Modeling</strong></h3>
+            <p class="service-description">
+                Using advanced 3D software, we provide realistic visualizations of your project, helping you make informed decisions.
+            </p>
+        </div>
+
+        <div class="service-item">
+            <h3 class="service-title"><strong>Site Supervision</strong></h3>
+            <p class="service-description">
+                We oversee every construction phase to ensure quality and efficiency, making sure your project is built to last.
+            </p>
+        </div>
+    </div>
+
+    <h2 class="why-choose-us-title">Why Choose Us?</h2>
+    
+    <div class="why-choose-us-list">
+        <div class="why-choose-us-item">
+            <h4><strong>Creative and Sustainable Designs</strong></h4>
+            <p>We bring innovative ideas to life while ensuring long-lasting solutions.</p>
+        </div>
+        
+        <div class="why-choose-us-item">
+            <h4><strong>Customized Solutions</strong></h4>
+            <p>Every project is tailored to match your specific vision and needs.</p>
+        </div>
+        
+        <div class="why-choose-us-item">
+            <h4><strong>Expertise You Can Trust</strong></h4>
+            <p>Our experienced team ensures quality at every stage of your project.</p>
+        </div>
+
+        <div class="why-choose-us-item">
+            <h4><strong>Unwavering Commitment to Excellence</strong></h4>
+            <p>We focus on delivering high standards and exceptional results.</p>
+        </div>
+    </div>
+    
+    <a href="{% url 'about' %}" class="view-about-btn">Click here to learn more about us</a>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Manage Floor Plans{% endblock %}
+
+{% block content %}
+<h2>Manage Floor Plans</h2>
+<a href="{% url 'upload_floor_plan' %}" class="btn btn-success mb-3">Upload New Floor Plan</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>File</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for floor_plan in floor_plans %}
+        <tr>
+            <td>{{ plan.title }}</td>
+            <td>{{ plan.description }}</td>
+            <td><a href="{{ plan.file.url }}" target="_blank">View File</a></td>
+            <td>
+                <a href="{% url 'delete_floor_plan' plan.id %}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

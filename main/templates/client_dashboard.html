@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="dashboard-container">
+    <h2>Client Dashboard</h2>
+
+    <div class="dashboard-buttons">
+        <a href="{% url 'submit_feedback' %}" class="btn">Submit Feedback</a>
+        <a href="{% url 'submit_inquiry' %}" class="btn">Submit Inquiry</a>
+        <a href="{% url 'logout' %}" class="btn logout-btn">Logout</a>
+    </div>
+
+    <h3>Your Submitted Feedback</h3>
+    <div class="dashboard-list">
+        {% for feedback in feedbacks %}
+        <div class="dashboard-item">
+            <p><strong>Rating:</strong> {{ feedback.rating }}/5</p>
+            <p>{{ feedback.message }}</p>
+            <p><small>Submitted on: {{ feedback.created_at }}</small></p>
+        </div>
+        {% empty %}
+        <p>No feedback submitted yet.</p>
+        {% endfor %}
+    </div>
+
+    <h3>Your Submitted Inquiries</h3>
+    <div class="dashboard-list">
+        {% for inquiry in inquiries %}
+        <div class="dashboard-item">
+            <p><strong>Subject:</strong> {{ inquiry.subject }}</p>
+            <p>{{ inquiry.message }}</p>
+            <p><small>Submitted on: {{ inquiry.created_at }}</small></p>
+        </div>
+        {% empty %}
+        <p>No inquiries submitted yet.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

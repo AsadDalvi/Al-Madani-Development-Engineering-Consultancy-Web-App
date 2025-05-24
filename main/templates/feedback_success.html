@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="feedback-success-container">
+    <h2>Thank You!</h2>
+    <p>Your feedback has been submitted successfully.</p>
+    <a href="{% url 'home' %}">Go Back</a>
+</div>
+{% endblock %}

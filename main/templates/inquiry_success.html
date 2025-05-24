@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="inquiry-success-container">
+    <h2>Inquiry Submitted Successfully!</h2>
+    <p>Thank you for reaching out to us. We will get back to you soon.</p>
+    <a href="{% url 'client_dashboard' %}">Go Back</a>
+</div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="feedback-container">
+    <h2>Submit Feedback</h2>
+    <form method="POST">
+        {% csrf_token %}
+
+        <!-- Message Input -->
+        <textarea name="message" placeholder="Your Feedback" required></textarea>
+
+        <!-- Ratings Section -->
+        <div class="rating-container">
+            <span class="rate-label">Rate Us!</span>
+
+            <div class="rating-wrapper">
+                <span class="rating-number">1</span>
+                <input type="radio" id="rating1" name="rating" value="1">
+                <label for="rating1">★</label>
+            </div>
+
+            <div class="rating-wrapper">
+                <span class="rating-number">2</span>
+                <input type="radio" id="rating2" name="rating" value="2">
+                <label for="rating2">★</label>
+            </div>
+
+            <div class="rating-wrapper">
+                <span class="rating-number">3</span>
+                <input type="radio" id="rating3" name="rating" value="3">
+                <label for="rating3">★</label>
+            </div>
+
+            <div class="rating-wrapper">
+                <span class="rating-number">4</span>
+                <input type="radio" id="rating4" name="rating" value="4">
+                <label for="rating4">★</label>
+            </div>
+
+            <div class="rating-wrapper">
+                <span class="rating-number">5</span>
+                <input type="radio" id="rating5" name="rating" value="5">
+                <label for="rating5">★</label>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn feedback-btn">Submit</button>
+    </form>
+
+    <br>
+    <a href="{% url 'client_dashboard' %}" class="dashboard-link">Back to Dashboard</a>
+</div>
+{% endblock %}

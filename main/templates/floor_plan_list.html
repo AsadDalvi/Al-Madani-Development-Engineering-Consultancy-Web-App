@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h2 class="title">Floor Plans</h2>
+
+    <!-- Search Bar -->
+    <form method="GET" class="search-form">
+        <input type="text" name="q" placeholder="Search..." value="{{ query }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Floor Plans Grid -->
+    <div class="floor-plans-grid">
+        {% for plan in floor_plans %}
+            <div class="floor-plan-card">
+                <h3>{{ plan.title }}</h3>
+                <p>Uploaded on: {{ plan.created_at|date:"Y-m-d" }}</p>
+                <a href="{{ plan.file.url }}" target="_blank" class="view-btn">View Full PDF</a>
+                <form action="{% url 'delete_floor_plan' plan.id %}" method="POST" class="delete-form">
+                    {% csrf_token %}
+                    <button type="submit" class="delete-btn" onclick="return confirm('Delete this floor plan?');">Delete</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Buttons -->
+    <div class="bottom-buttons">
+        <a href="{% url 'upload_floor_plan' %}" class="action-btn">Upload New Floor Plan</a>
+        <a href="{% url 'employee_dashboard' %}" class="action-btn">Back to Dashboard</a>
+    </div>
+</div>
+{% endblock %}

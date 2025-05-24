@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <h2>Inquiry Report</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Client Name</th>
+                <th>Email</th>
+                <th>Inquiry</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for inquiry in inquiries %}
+            <tr>
+                <td>{{ inquiry.user.username }}</td>
+                <td>{{ inquiry.user.email }}</td>
+                <td>{{ inquiry.message }}</td>
+                <td>{{ inquiry.created_at }}</td>
+                <td>
+                    <a href="{% url 'delete_inquiry' inquiry.id %}" onclick="return confirm('Are you sure?');">Delete</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No inquiries available.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="report-actions">
+        <a href="{% url 'download_inquiry_report' %}" class="btn">Download Report</a>
+        <a href="{% url 'employee_dashboard' %}" class="btn">Back to Dashboard</a>
+    </div>
+</div>
+
+{% endblock %}
